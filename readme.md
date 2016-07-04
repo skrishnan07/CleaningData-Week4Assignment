@@ -1,21 +1,43 @@
- ##  This function performs the tasks of cleaning up data sets chosen
-        ##  for the Getting and Cleaning Data course final asignment from
-        ##  the UCI Human Activity Recognition Using Smartphones project
+#==================================================================
+#Human Activity Recognition Using Smartphones Dataset
+
+
+##Cleaning Data Project
+##Getting and Cleaning Data
+##Final Assignment
+#==================================================================
+
+The following files are includes in this Github Repository
+
+i. X_tidy.txt  Contains the tidy version of the combined test and training date from the original study
         
-        ##  The directory containing the original "README.txt" provided
-        ##  by the project data scientists is refered in the rest of this
-        ##  R script and associated document as the "root" directory
-        
-        ##  This script is assumed to reside at the same level and
-        ##  reads the input data from sub-directories under there
-        ##  the resulting, merged, tidy dataset is then written out
-        ## into a sub-folder called "tidy".  
-        
-        ## the tidy folder will have the following files
-        ## X_tidy.txt   Contains the merged data set from part 4 of the assignment
-        ## X_summary.txt  Contains the summary data set from part 5 of the assignment
-        
-        ## Initialize all filenames and useful variable names using symbolic constants
-        ## Easy to edit it all in one place in case one makes mistkes
-        
-        ## File name and column names for internal activity_labels table
+Following changes were made:
+* Combined the training and test data for a total of ~10200 samples
+* Retained only the mean and standard deviation values estimated for each of the inertial signals in time and frequency        domains
+* Replace activity codes with English words for the activities
+* Removed parentheses and blanks from signal names and prefixed them with either Mean- or Std- to indicate the type of measurement
+
+
+
+ii. X_summary.txt  Contains the aggregated version of the tidy data, aggregated by subject and type of activity.
+Contains 40 combinations of subject and activity. 
+
+
+
+iii.  run_analysis.R
+
+Contains the R script that contains the main runAnalysis function and several other supporting function.  When the script runs
+it produces the two data files under the “tidy” directory. It is expected to run at the same level as the original root folder for the project.
+
+Detailed instructions of how to run the script is captured in the Script-Explanation.html notebook compiled from R-Studio
+
+
+
+iv. Script-Explanation.html      
+
+Contains a HTML notebook combined from comments placed in the code. The documentation for each function explains the purpose of the function. Several key steps are also further documented
+
+
+v. Code Book.pdf
+
+Contains the code book for the data set.  Most of the description was culled from the contents in the original read.me file and pieced together from the features_info.txt file that accompanied the distribution
